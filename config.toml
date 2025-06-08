@@ -1,0 +1,9 @@
+[general]
+download_path = "downloads"
+cookies_file = "cookies/cookies.txt"
+interval_minutes = 30
+proxy = "http://10.10.0.10:28800"
+
+[yt_dlp]
+output_template = "%(uploader)s/%(title)s.%(ext)s"
+format = "best"

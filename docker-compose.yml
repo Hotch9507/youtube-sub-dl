@@ -1,0 +1,12 @@
+version: '3'
+services:
+  yt-ui:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./downloads:/app/downloads
+      - ./cookies:/app/cookies
+      - ./config.toml:/app/config.toml
+    environment:
+      - TZ=Asia/Shanghai
