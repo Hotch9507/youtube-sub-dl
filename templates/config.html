@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}配置 - YT-Sub-DL{% endblock %}
+{% block content %}
+<h2>配置</h2>
+<form method="post" enctype="multipart/form-data" class="mb-4">
+  <div class="mb-3">
+    <label class="form-label">上传 Cookie 文件</label>
+    <input type="file" name="cookie_file" class="form-control" />
+  </div>
+  <button type="submit" formaction="/config/upload_cookie" class="btn btn-primary">
+    上传 Cookie
+  </button>
+</form>
+
+<form method="post" class="mb-4">
+  <div class="mb-3">
+    <label class="form-label">代理地址</label>
+    <input type="text" name="proxy" value="{{ config.proxy }}" class="form-control"
+           placeholder="http://127.0.0.1:7890" />
+  </div>
+  <button type="submit" formaction="/config/set_proxy" class="btn btn-primary">
+    保存代理
+  </button>
+</form>
+{% endblock %}

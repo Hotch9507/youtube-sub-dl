@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}订阅列表 - YT-Sub-DL{% endblock %}
+{% block content %}
+<h2>我的订阅</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>频道名称</th>
+      <th>新视频</th>
+      <th>已下载</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ch in channels %}
+    <tr>
+      <td>{{ ch.name }}</td>
+      <td>{{ ch.new_count }}</td>
+      <td>{{ ch.downloaded_count }}</td>
+      <td>
+        <a href="{{ url_for('download_channel', channel_id=ch.id) }}"
+           class="btn btn-sm btn-primary">下载</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

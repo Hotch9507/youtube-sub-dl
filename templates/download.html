@@ -1,5 +1,26 @@
 {% extends "base.html" %}
-{% block title %}下载管理{% endblock %}
+{% block title %}下载管理 - YT-Sub-DL{% endblock %}
 {% block content %}
-  <h2>下载管理（待实现）</h2>
+<h2>下载任务</h2>
+<table class="table">
+  <thead>
+    <tr><th>频道</th><th>视频</th><th>状态</th><th>进度</th></tr>
+  </thead>
+  <tbody>
+    {% for job in jobs %}
+    <tr>
+      <td>{{ job.channel_name }}</td>
+      <td>{{ job.video_title }}</td>
+      <td>{{ job.status }}</td>
+      <td>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: {{ job.progress }}%;">
+            {{ job.progress }}%
+          </div>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
