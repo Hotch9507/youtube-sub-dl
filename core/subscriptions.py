@@ -1,4 +1,4 @@
-# core/subscription.py
+# core/subscriptions.py
 import os
 import tomli
 from yt_dlp import YoutubeDL
